@@ -1,3 +1,6 @@
+import {Member} from "./Member";
+import { Book } from "./Book";
+
 export class Librarian {
     private userName: string;
     private email: string;
@@ -12,5 +15,5 @@ export class Librarian {
     public updateBook() {}
     public removeBook() {}
     public checkSales() {}
-    public viewAllMembers(): Member[] {}
+    public viewAllMembers():void {}
 }

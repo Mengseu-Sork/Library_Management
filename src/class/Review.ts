@@ -1,5 +1,5 @@
+import { Book } from "./Book";
 import { Member } from "./Member";
-
 export class Review {
     private bookId: Book[];
     private member: Member;

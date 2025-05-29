@@ -1,4 +1,4 @@
-class Book {
+export class Book {
   constructor(
     private BookID: BookID[],
     private BookName: string,
