@@ -1,3 +1,4 @@
+import { Member } from "./Member";
 export class ReturnBook {
     private member: Member;
     private book: ReturnBook;
@@ -7,5 +8,5 @@ export class ReturnBook {
         this.book = book;
     }
     public returnDate() {}
-    public IsNotified(): boolean {}
+    public IsNotified(): boolean | void {}
 }

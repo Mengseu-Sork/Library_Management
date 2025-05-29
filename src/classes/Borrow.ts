@@ -1,4 +1,5 @@
-class Borrow {
+import { Book } from "./Book";
+export class Borrow {
   constructor(
     private BookName: string,
     private AmountBook: number,

@@ -1,4 +1,5 @@
 import { Member } from "./Member";
+import { Book } from "./Book";
 
 export class Review {
     private bookId: Book[];
@@ -13,5 +14,17 @@ export class Review {
         this.rating = rating;
         this.comment = comment;
         this.reviewDate = new Date();
+    }
+    getBookId(): Book[]{
+        return this.bookId;
+    }
+    getMember(): Member {
+        return this.member;
+    }
+    getRating(): number{
+        return this.rating;
+    }
+    getComment(): string{
+        return this.comment;
     }
 }
