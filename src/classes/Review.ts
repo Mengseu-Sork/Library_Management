@@ -14,4 +14,16 @@ export class Review {
         this.comment = comment;
         this.reviewDate = new Date();
     }
+    getBookId(): Book[]{
+        return this.bookId;
+    }
+    getMember(): Member {
+        return this.member;
+    }
+    getRating(): number{
+        return this.rating;
+    }
+    getComment(): string{
+        return this.comment;
+    }
 }

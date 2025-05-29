@@ -1,3 +1,4 @@
+import { BookID } from "./BookID";
 export class Book {
   constructor(
     private BookID: BookID[],

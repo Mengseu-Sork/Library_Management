@@ -1,5 +1,5 @@
- import { Member } from "./Member";
- export class ReturnBook {
+import { Member } from "./Member";
+export class ReturnBook {
     private member: Member;
     private book: ReturnBook;
 
@@ -8,5 +8,5 @@
         this.book = book;
     }
     public returnDate() {}
-    public IsNotified(): void {}
+    public IsNotified(): boolean | void {}
 }
