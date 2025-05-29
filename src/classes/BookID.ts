@@ -1,4 +1,4 @@
-class BookID {
+export class BookID {
     constructor(private bookId: string, private amount: number) {
         this.amount = amount;
         this.bookId = bookId

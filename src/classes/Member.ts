@@ -1,4 +1,5 @@
-class Member {
+import { Book } from "./Book";
+export class Member {
   constructor(
     private memberID: string,
     private firstName: string,
