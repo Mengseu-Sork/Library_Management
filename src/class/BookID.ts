@@ -7,7 +7,7 @@ class BookID {
     getID(): string {
         return this.bookId;
     }
-    getAmount(){
+    getAmount(): number{
         return this.amount;
     }
 }

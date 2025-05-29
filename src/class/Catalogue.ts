@@ -12,19 +12,19 @@ export class Catalogue {
     this.BookType = BookType;
     this.DataAdd = DataAdd;
     }
-    getAuhtor(){
+    getAuhtor(): string{
         return this.Author;
     }
-    getBookName(){
+    getBookName(): string{
         return this.BookName;
     }
-    getBookID(){
+    getBookID(): number{
         return this.BookID;
     }
-    getBookType(){
+    getBookType(): string{
         return this.BookType;
     }
-    getDataAdd(){
+    getDataAdd(): number{
         return this.DataAdd;
     }
 
