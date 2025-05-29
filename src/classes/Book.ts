@@ -1,6 +1,7 @@
-class Book {
+ import { BookID } from "./BookID";
+ export class Book {
   constructor(
-    private BookID: BookID[],
+    private BookID:string,
     private BookName: string,
     private BookType: string,
     private Author: string,
@@ -16,8 +17,8 @@ class Book {
     this.CreateYear = CreateYear;
     this.AvailableNumber = AvailableNumber;
     }
-    getBookIDs(): string[] {
-        return this.BookID.map(bid => bid.getID());
+    getBookIDs(): string {
+        return this.BookID;
     }
 
     getBookName(): string {
