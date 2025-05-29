@@ -1,5 +1,5 @@
-import { Register } from "./class/Register";
-import { Login } from "./class/Login";
+import { Register } from "./classes/Register";
+import { Login } from "./classes/Login";
 
 
 
