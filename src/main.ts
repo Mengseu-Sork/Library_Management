@@ -1,7 +1,7 @@
 import { Register } from "./classes/Register";
 import { Login } from "./classes/Login";
 import { Book } from "./classes/Book";
-import { BookID } from "./classes/BookID";
+
 
 
 
@@ -51,9 +51,9 @@ const book = new Book(
 ;
 
 // Display book info
-console.log("📘 Book Name:", book.getBookName());
-console.log("📚 Book IDs:", book.getBookIDs());
-console.log("🖊️ Author:", book.getAuthor());
-console.log("📂 Category:", book.getCategory());
-console.log("📅 Year:", book.getCreateYear());
-console.log("✅ Available Copies:", book.getAvailableNumber());
+console.log(" Book Name:", book.getBookName());
+console.log(" Book IDs:", book.getBookIDs());
+console.log(" Author:", book.getAuthor());
+console.log(" Category:", book.getCategory());
+console.log(" Year:", book.getCreateYear());
+console.log(" Available Copies:", book.getAvailableNumber());

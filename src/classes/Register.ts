@@ -45,5 +45,8 @@ export class Register {
     getPhone(): string{
         return this.phone
      }
+     getAge():number{
+        return this.age
+     }
      
 }
