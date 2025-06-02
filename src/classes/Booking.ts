@@ -1,3 +1,19 @@
+import { Book } from "./Book";
+// export class Booking {
+//   private reservedBooks: Book[] = [];
+
+//   constructor() {}
+
+//   public checkBook(book: Book): boolean {
+//     return book.checkAvailability();
+//   }
+//     public reserveBook(book: Book): void {
+//     if (book.checkAvailability()) {
+//       this.reservedBooks.push(book);
+//       book.reserveBook();
+//     }
+//   }
+// }
 export class Booking {
     private bookId: string;
     private bookingDate: Date;
@@ -18,5 +34,14 @@ export class Booking {
         return this.bookingBook;
     }
 
-    
+    checkBook(book: Book): void {
+
+    }
+
+    cancelBooking(book: Book): void {
+
+    }
+
 }
+
+

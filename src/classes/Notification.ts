@@ -1,4 +1,3 @@
-import { Book } from "./Book";
 export class Notification {
     private name: string;
     private email: string;
@@ -19,12 +18,6 @@ export class Notification {
         return this.bookDate;
     }
 
-    checkBook(book: Book): void {
 
-    }
-
-    cancelBooking(book: Book): void {
-        
-    }
 
 }
