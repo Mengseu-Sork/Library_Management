@@ -27,6 +27,18 @@ export class Register {
         return this.email;
     }
 
+    getFirstName():string{
+        return this.fName
+    }
+    getLastName():string{
+        return this.lName
+    }
+    getPhone(): string{
+        return this.phone
+    }
+    getAge():number{
+        return this.age
+    }
     public static checkEmail(register: Register, existingUsers: Register[]): boolean {
         const newEmail = register.getEmail();
         for (let user of existingUsers) {
@@ -36,17 +48,5 @@ export class Register {
         }
         return true; 
     }
-    getFirstName():string{
-        return this.fName
-    }
-    getLastName():string{
-        return this.lName
-    }
-    getPhone(): string{
-        return this.phone
-     }
-     getAge():number{
-        return this.age
-     }
      
 }
