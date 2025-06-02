@@ -19,20 +19,17 @@ const existingUsers: Register[] = [
 const newUser = new Register("Samon", "Suon", "joh@gmail.com", "0965", 19, "123456");
 
 if (Register.checkEmail(newUser, existingUsers)) {
-    console.log("✅ Email is available");
+    console.log(" Email is available");
 } else {
-    console.log("❌ Email already used");
+    console.log(" Email already used");
 }
-
-
 
 // Login user
 const loginUser = new Login("aLice@example.com", "pass123");
-
 if (Login.check(loginUser, existingUsers)) {
-    console.log("✅ Login successful");
+    console.log(" Login successful");
 } else {
-    console.log("❌ Invalid email or password");
+    console.log(" Invalid email or password");
 }
 
 
