@@ -1,5 +1,5 @@
-enum PaymentMethod {
-    CREDIT_CARD = "CREDIT CARD",
+export enum PaymentMethod {
+    CREDIT_CARD = "CREDIT_CARD",
     DEBIT = "DEBIT",
     CASH = "CASH",
 }
