@@ -1,5 +1,4 @@
-
-enum BookFormat {
+export enum BookFormat {
     PHYSICAL = "PHYSICAL",
     DIGITAL = "DIGITAL",
 }
