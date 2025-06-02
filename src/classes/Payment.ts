@@ -1,9 +1,9 @@
 import { PaymentMethod} from "../Enums/PaymentMethod";
 export class Payment {
   constructor(
-    private amount: number,
-    private paymentMethod: PaymentMethod,
-    private date: Date = new Date()
+    public amount: number,
+    public paymentMethod: PaymentMethod,
+    public date: Date = new Date()
   ) {}
 
   public getPaymentDetails(): string {
