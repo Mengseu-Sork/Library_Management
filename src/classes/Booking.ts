@@ -1,48 +1,29 @@
 import { Book } from "./Book";
-// export class Booking {
-//   private reservedBooks: Book[] = [];
-
-//   constructor() {}
-
-//   public checkBook(book: Book): boolean {
-//     return book.checkAvailability();
-//   }
-//     public reserveBook(book: Book): void {
-//     if (book.checkAvailability()) {
-//       this.reservedBooks.push(book);
-//       book.reserveBook();
-//     }
-//   }
-// }
-// }
 export class Booking {
-    private bookId: string;
-    private bookingDate: Date;
-    private bookingBook: string;
+  private reservedBooks: Book[] = [];
 
-    constructor(bookId: string, bookingDate: Date, bookingBook: string) {
-        this.bookId = bookId;
-        this.bookingDate = bookingDate;
-        this.bookingBook = bookingBook;
-    }
-    getBookId(): string {
-        return this.bookId;
-    }
-    getBookingDate(): Date {
-        return this.bookingDate;
-    }
-    getBookingBook(): string {
-        return this.bookingBook;
-    }
+  constructor(
+    public bookingID: string,
+    public bookingDate: string,
+    public category: string
+  ) {}
 
-    checkBook(book: Book): void {
+  public checkBook(book: Book): boolean {
+    return book.isAvailable();
+  }
 
+  public reserveBook(book: Book): void {
+    if (book.isAvailable()) {
+      this.reservedBooks.push(book);
+      book.borrowCopy();
     }
+  }
 
-    cancelBooking(book: Book): void {
-
+  public cancelBooking(book: Book): void {
+    const index = this.reservedBooks.indexOf(book);
+    if (index !== -1) {
+      this.reservedBooks.splice(index, 1);
+      book.returnCopy();
     }
-
+  }
 }
-
-
