@@ -1,42 +1,46 @@
 import { Book } from "./Book";
+import { BorrowStatus } from "../Enums/BorrowStatus";
+import { Member } from "./Member";
 export class Borrow {
+
   constructor(
-    private BookName: string,
-    private AmountBook: number,
-    private StartDate: Date = new Date()
+    public book: Book,
+    public member: Member,
+    public issueDate: Date,
+    public returnDate: Date,
+    public status: BorrowStatus,
+    public fine: number,
+
   ) {
-    this.BookName = BookName;
-    this.AmountBook = AmountBook;
-    this.StartDate = StartDate;
-    }
-    getBookNmae(){
-        this.BookName;
-    }
-    getAmountBook(){
-        this.AmountBook;
-    }
-    getStarDate(){
-        return this.StartDate;
-    }
-    viewBorrow(book: Book): void {
-        
+
+  }
+   calculateDueDate(): Date {
+    const due = new Date(this.issueDate);
+    due.setDate(due.getDate() + 14);
+    return due;
+  }
+   calculateFine(): number {
+    const dueDate = this.calculateDueDate();
+    const returnedOn = this.returnDate ?? new Date();
+
+    const timeDiff = returnedOn.getTime() - dueDate.getTime();
+    const daysLate = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysLate > 0) {
+      this.fine = daysLate * 0.5; 
+    } else {
+      this.fine = 0;
     }
 
-    returnBook(book: Book): void {
-        
-    }
-
-    reserveBook(book: Book): void {
-        
-    }
-
-    reviewBook(book: Book): void {
-        
-    }
-
-    calculateDueDate(start: Date): Date {
-        const due = new Date(start);
-        due.setDate(due.getDate() + 14);
-        return due;
-    }
+    return this.fine;
+  }
+   returnBook(): void {
+    this.returnDate = new Date();
+    this.status = BorrowStatus.RETURNED;
+    this.calculateFine();
+  }
+  
+//     canBorrowMore(): boolean {
+//     return this.member.activeBorrowCount() < 5;
+//   }
 }
