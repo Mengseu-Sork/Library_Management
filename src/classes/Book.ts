@@ -1,71 +1,93 @@
+import { BookFormat } from "../Enums/BookFomat";
+export class Book {
+    private bookId: string;
+    private bookTitle: string;
+    private bookType: string;
+    private author: string;
+    private createYear: number;
+    private isbnNumber: string;
+    private availableCopies: number;
+    private format: BookFormat;
 
- export class Book {
-  constructor(
-    private BookID:string,
-    private BookName: string,
-    private BookType: string,
-    private Author: string,
-    private Category: string,
-    private CreateYear: number,
-    private AvailableNumber: number
-  ) {
-    this.BookName = BookName;
-    this.BookID = BookID;
-    this.BookType = BookType;
-    this.Author = Author;
-    this.Category = Category;
-    this.CreateYear = CreateYear;
-    this.AvailableNumber = AvailableNumber;
-    }
-    getBookIDs(): string {
-        return this.BookID;
-    }
-
-    getBookName(): string {
-        return this.BookName;
-    }
-
-    getBookType(): string {
-        return this.BookType;
-    }
-
-    getAuthor(): string {
-        return this.Author;
+    constructor(
+        bookId: string,
+        bookTitle: string,
+        bookType: string,
+        author: string,
+        createYear: number,
+        isbnNumber: string,
+        availableCopies: number,
+        format: BookFormat
+    ) {
+        this.bookId = bookId;
+        this.bookTitle = bookTitle;
+        this.bookType = bookType;
+        this.author = author;
+        this.createYear = createYear;
+        this.isbnNumber = isbnNumber;
+        this.availableCopies = availableCopies;
+        this.format = format;
     }
 
-    getCategory(): string {
-        return this.Category;
+
+    public getBookId(): string {
+        return this.bookId;
     }
 
-    getCreateYear(): number {
-        return this.CreateYear;
+    public getBookTitle(): string {
+        return this.bookTitle;
     }
 
-    getAvailableNumber(): number {
-        return this.AvailableNumber;
+    public getBookType(): string {
+        return this.bookType;
     }
 
-    isAvailable(): boolean {
-        return this.AvailableNumber > 0;
+    public getAuthor(): string {
+        return this.author;
     }
 
-    borrowCopy(): boolean {
-        if (this.AvailableNumber > 0) {
-        this.AvailableNumber--;
-        return true;
+    public getCreateYear(): number {
+        return this.createYear;
+    }
+
+    public getIsbnNumber(): string {
+        return this.isbnNumber;
+    }
+
+    public getAvailableCopies(): number {
+        return this.availableCopies;
+    }
+
+    public getFormat(): BookFormat {
+        return this.format;
+    }
+
+
+    updateStock(amount: number): boolean {
+        if (this.availableCopies + amount >= 0) {
+            this.availableCopies += amount;
+            console.log(`Stock for "${this.bookTitle}" updated to ${this.availableCopies}.`);
+            return true;
         }
+        console.error("Cannot reduce stock below zero.");
         return false;
     }
 
-    returnCopy(): void {
-        this.AvailableNumber++;
+    isAvailable(): boolean {
+        return this.availableCopies > 0;
     }
 
-    updateStock(amount: number): void {
-        this.AvailableNumber += amount;
-        if (this.AvailableNumber < 0) {
-            this.AvailableNumber = 0;
-            }
+    borrowCopy(): void {
+        if (this.isAvailable()) {
+            this.availableCopies--;
+            console.log(`One copy of "${this.bookTitle}" borrowed. Available: ${this.availableCopies}`);
+        } else {
+            console.error(`No copies of "${this.bookTitle}" available for borrowing.`);
         }
+    }
 
+    returnCopy(): void {
+        this.availableCopies++;
+        console.log(`One copy of "${this.bookTitle}" returned. Available: ${this.availableCopies}`);
+    }
 }
