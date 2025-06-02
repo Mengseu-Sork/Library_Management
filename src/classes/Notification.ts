@@ -17,7 +17,4 @@ export class Notification {
     getBookDate(): number {
         return this.bookDate;
     }
-
-
-
 }
