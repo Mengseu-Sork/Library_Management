@@ -1,6 +1,6 @@
-import { Register } from "./classes/Register";
-import { Login } from "./classes/Login";
-import { Book } from "./classes/Book";
+    import { Register } from "./classes/Register";
+    import { Login } from "./classes/Login";
+    import { Book } from "./classes/Book";
 
 
 
