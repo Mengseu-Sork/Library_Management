@@ -41,8 +41,8 @@ export class Register {
     getAge():number{
         return this.age
     }
-    getPassword(): string {
-        return this.password;
+    getAddress(): string {
+        return this.address;
     }
     public static checkEmail(register: Register, existingUsers: Register[]): boolean {
         const newEmail = register.getEmail();
