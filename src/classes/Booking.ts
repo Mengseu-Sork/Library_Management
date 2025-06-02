@@ -1,4 +1,5 @@
 import { Book } from "./Book";
+import { Member } from "./Member";
 export class Booking {
   private reservedBooks: Book[] = [];
 
