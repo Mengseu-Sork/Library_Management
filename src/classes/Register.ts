@@ -5,10 +5,10 @@ export class Register {
     private fName: string;
     private lName: string;
     private email: string;
-    private phone: string;
+    protected phone: string;
     private age: number;
     private password: string;
-    private address: string; // optional property
+    protected address: string; // optional property
 
     constructor(fName: string, lName: string, email: string, phone: string, age: number, password: string, address: string) {
         this.id = Register.nextId++; // auto-increment ID

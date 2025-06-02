@@ -1,47 +1,42 @@
 import { Book } from "./Book";
-// export class Booking {
-//   private reservedBooks: Book[] = [];
+import { Member } from "./Member";
 
-//   constructor() {}
-
-//   public checkBook(book: Book): boolean {
-//     return book.checkAvailability();
-//   }
-//     public reserveBook(book: Book): void {
-//     if (book.checkAvailability()) {
-//       this.reservedBooks.push(book);
-//       book.reserveBook();
-//     }
-//   }
-// }
 export class Booking {
-    private bookId: string;
+    private bookingID: string;
+    private book: Book;
     private bookingDate: Date;
-    private bookingBook: string;
+    private member: Member;
 
-    constructor(bookId: string, bookingDate: Date, bookingBook: string) {
-        this.bookId = bookId;
+    constructor(bookingID: string, book: Book, member: Member, bookingDate: Date) {
+        this.bookingID = bookingID;
+        this.book = book;
+        this.member = member;
         this.bookingDate = bookingDate;
-        this.bookingBook = bookingBook;
     }
-    getBookId(): string {
-        return this.bookId;
+
+    getBookingID(): string {
+        return this.bookingID;
     }
+
+    getBook(): Book {
+        return this.book;
+    }
+
     getBookingDate(): Date {
         return this.bookingDate;
     }
-    getBookingBook(): string {
-        return this.bookingBook;
+
+    getMember(): Member {
+        return this.member;
     }
 
-    checkBook(book: Book): void {
-
+    checkBook(book: Book): boolean {
+        return this.book === book;
     }
 
-    cancelBooking(book: Book): void {
+    cancelBooking(): void {
+        console.log(`Booking ${this.bookingID} for "${this.book.getBookTitle()}" cancelled.`);
 
     }
-
 }
-
 
