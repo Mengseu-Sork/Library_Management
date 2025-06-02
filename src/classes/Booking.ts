@@ -14,6 +14,7 @@ import { Book } from "./Book";
 //     }
 //   }
 // }
+// }
 export class Booking {
     private bookId: string;
     private bookingDate: Date;

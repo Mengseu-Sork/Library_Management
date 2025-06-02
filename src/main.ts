@@ -35,22 +35,22 @@ if (Login.check(loginUser, existingUsers)) {
 
 // Create BookID objects
 
-// Create Book object
-const book = new Book(
-  "AA1",
-  "The Pragmatic Programmer", // BookName
-  "Non-Fiction",              // BookType
-  "Andy Hunt & Dave Thomas",  // Author
-  "Programming",              // Category
-  1999,                       // CreateYear
-  5                           // AvailableNumber
-)
-;
+// // Create Book object
+// const book = new Book(
+//   "AA1",
+//   "The Pragmatic Programmer", // BookName
+//   "Non-Fiction",              // BookType
+//   "Andy Hunt & Dave Thomas",  // Author
+//   "Programming",              // Category
+//   1999,                       // CreateYear
+//   5                           // AvailableNumber
+// )
+// ;
 
-// Display book info
-console.log(" Book Name:", book.getBookName());
-console.log(" Book IDs:", book.getBookIDs());
-console.log(" Author:", book.getAuthor());
-console.log(" Category:", book.getCategory());
-console.log(" Year:", book.getCreateYear());
-console.log(" Available Copies:", book.getAvailableNumber());
+// // Display book info
+// console.log(" Book Name:", book.getBookName());
+// console.log(" Book IDs:", book.getBookIDs());
+// console.log(" Author:", book.getAuthor());
+// console.log(" Category:", book.getCategory());
+// console.log(" Year:", book.getCreateYear());
+// console.log(" Available Copies:", book.getAvailableNumber());
