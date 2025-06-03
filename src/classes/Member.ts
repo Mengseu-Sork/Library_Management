@@ -72,7 +72,8 @@ export class Member extends Register {
         throw new Error("Book not available");
       }
 
-      let newBooking = new Booking(`BOOKING-${Date.now()}`, book, this, bookingDate);
+
+      let newBooking = new Booking(`BOOKING-${Date.now()}`, bookingDate, book, this);
       this.bookedBooks.push(newBooking);
       book.borrowCopy();
       console.log(`Book "${book.getBookTitle()}" reserved by ${this.getFirstName()}.`);
@@ -122,3 +123,8 @@ export class Member extends Register {
         return this.reviews;
     }
 }
+
+
+
+
+

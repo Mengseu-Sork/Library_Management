@@ -1,13 +1,14 @@
 import { Book } from "./Book";
 import { Member } from "./Member";
+
 export class Booking {
   private reservedBooks: Book[] = [];
 
   constructor(
     public bookingID: string,
     public bookingDate: Date,
-    public member: Member,
-    public category: string
+    public book: Book,
+    public member: Member
   ) {}
 
   public checkBook(book: Book): boolean {
