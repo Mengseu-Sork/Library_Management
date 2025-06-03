@@ -1,20 +1,28 @@
+import { Book } from "./Book";
+import { Member } from "./Member";
 export class Notification {
-    private name: string;
-    private email: string;
-    private bookDate: number;
+  constructor(
+    private name: string,
+    private email: string,
+    private message: string,
+    private date: Date,
+    private book: Book,
+    private member: Member
+  ) {}
+  public getName(): string {
+    return this.name;
+  }
+  public getEmail(): string {
+    return this.email;
+  }
+  public getDate(): Date {
+    return this.date;
+  }
+  public getBook(): Book {
+    return this.book;
+  }
 
-    constructor(name: string, email: string, bookDate: number) {
-        this.name = name;
-        this.email = email;
-        this.bookDate = bookDate;
-    }
-    getName(): string {
-        return this.name;
-    }
-    getEmail(): string {
-        return this.email;
-    }
-    getBookDate(): number {
-        return this.bookDate;
-    }
+  public send(): void {
+    console.log(`Notification sent to ${this.member.getFirstName()}: ${this.message}`);
+  }
 }

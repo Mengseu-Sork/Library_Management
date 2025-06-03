@@ -5,7 +5,7 @@ export class Booking {
 
   constructor(
     public bookingID: string,
-    public bookingDate: string,
+    public bookingDate: Date,
     public category: string
   ) {}
 
