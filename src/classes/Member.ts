@@ -114,7 +114,7 @@ export class Member extends Register {
 
     public addReview(review: Review): void {
         this.reviews.push(review);
-        console.log(`Review added by ${this.getFirstName()} for book ${review.getBookId}.`);
+        console.log(`Review added by ${this.getFirstName()} for book ${review.getReviewID}.`);
     }
 
 
