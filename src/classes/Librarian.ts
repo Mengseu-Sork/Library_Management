@@ -1,6 +1,8 @@
 import { Member } from "./Member";
 import { Book } from "./Book";
 
+// This class represents a librarian in a library system.
+// The librarian can manage books, members, and track borrowed books.
 export class Librarian {
     private userName: string;
     private email: string;
@@ -13,7 +15,7 @@ export class Librarian {
         this.email = email;
     }
 
-    getUserName(): string {
+    getUserName(): string {   // Returns the username of the librarian
         return this.userName;
     }
 
@@ -29,14 +31,14 @@ export class Librarian {
         this.books.push(book);
     }
 
-    public updateBook(book: Book): void {
+    public updateBook(book: Book): void {   // Updates an existing book in the library
         const index = this.books.findIndex(b => b.getBookId() === book.getBookId());
         if (index !== -1) {
             this.books[index] = book;
         }
     }
 
-    public removeBook(book: Book): void {
+    public removeBook(book: Book): void {   // Removes a book from the library
         const index = this.books.findIndex(b => b.getBookId() === book.getBookId());
         if (index !== -1) {
             this.books.splice(index, 1);
@@ -44,7 +46,7 @@ export class Librarian {
         }
     }
 
-    public checkSales(): void {
+    public checkSales(): void {   // This method checks the sales of books in the library.
         this.borrowedBooks.clear();
         for (const book of this.books) {
             const initialCopies = book.getAvailableCopies() + (this.borrowedBooks.get(book.getBookId()) || 0);
