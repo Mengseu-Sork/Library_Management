@@ -6,6 +6,7 @@ export class Booking {
   constructor(
     public bookingID: string,
     public bookingDate: Date,
+    public member: Member,
     public category: string
   ) {}
 
