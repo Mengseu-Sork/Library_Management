@@ -44,6 +44,9 @@ export class Register {
     getAddress(): string {
         return this.address;
     }
+    getPassword(): string {
+        return this.password;
+    }
     public static checkEmail(register: Register, existingUsers: Register[]): boolean {
         const newEmail = register.getEmail();
         for (let user of existingUsers) {
