@@ -1,8 +1,10 @@
 import { Book } from "./Book";
 import { Member } from "./Member";
-// This class represents a booking system for reserving books in a library.
-// It allows members to check the availability of books, reserve them, and cancel bookings.
 
+/**
+ * Represents a booking system for reserving books in a library.
+ * Allows members to check the availability of books, reserve them, and cancel bookings.
+ */
 export class Booking {
   private reservedBooks: Book[] = [];
 
@@ -11,20 +13,35 @@ export class Booking {
     public bookingDate: Date,
     public book: Book,
     public member: Member
-  ) {}
+  ) { }
 
-  public checkBook(book: Book): boolean {   // This method checks if a book is available for reservation.
+  /**
+  * Checks if a book is available for reservation.
+  * @param book The book to check availability for.
+  * @returns True if the book is available, false otherwise.
+  */
+  public checkBook(book: Book): boolean {
     return book.isAvailable();
   }
 
-  public reserveBook(book: Book): void {   // This method reserves a book if it is available.
+
+  /**
+   * Reserves a book if it is available.
+   * @param book The book to reserve.
+   */
+  public reserveBook(book: Book): void {
     if (book.isAvailable()) {
       this.reservedBooks.push(book);
       book.borrowCopy();
     }
   }
 
-  public cancelBooking(book: Book): void {   // This method cancels a reservation for a book.
+
+  /**
+   * Cancels a reservation for a book.
+   * @param book The book to cancel the reservation for.
+   */
+  public cancelBooking(book: Book): void {
     const index = this.reservedBooks.indexOf(book);
     if (index !== -1) {
       this.reservedBooks.splice(index, 1);
