@@ -47,7 +47,7 @@ export class Member extends Register {
     public viewBorrowed(): Borrow[] {
         console.log(`Books currently borrowed by ${this.getFirstName()} ${this.getLastName()}:`);
         this.borrowedBooks.forEach(borrow => {
-            console.log(` - ${borrow.book.getBookTitle()} (Due: ${borrow.calculateDueDate().toLocaleDateString()})`);
+            console.log(` - ${borrow.book} (Due: ${borrow.calculateDueDate().toLocaleDateString()})`);
         });
         return this.borrowedBooks;
     }
@@ -59,7 +59,7 @@ export class Member extends Register {
     public renewBookBook(borrow: Borrow): boolean {
         const foundBorrow = this.borrowedBooks.find(b => b === borrow);
         if (foundBorrow) {
-            console.log(`Book "${foundBorrow.book.getBookTitle()}" renewed for ${this.getFirstName()}.`);
+            console.log(`Book "${foundBorrow.book}" renewed for ${this.getFirstName()}.`);
             return true;
         }
         console.log(`Could not find borrow record to renew for ${this.getFirstName()}.`);
@@ -124,8 +124,3 @@ export class Member extends Register {
         return this.reviews;
     }
 }
-
-
-
-
-
