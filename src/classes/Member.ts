@@ -67,16 +67,18 @@ export class Member extends Register {
     }
 
     public reserveBook(book: Book, bookingDate: Date): Booking {
-      if (!book.isAvailable()) {
-        console.log(`Book "${book.getBookTitle()}" is not available for booking.`);
-        throw new Error("Book not available");
-      }
+    if (!book.isAvailable()) {
+        const title = book.getBookTitle();
+        console.log(`Book "${title}" is not available for booking.`);
+        throw new Error(`Book "${title}" is not available for reservation.`);
+    }
 
-      let newBooking = new Booking(`BOOKING-${Date.now()}`, book, this, bookingDate);
-      this.bookedBooks.push(newBooking);
-      book.borrowCopy();
-      console.log(`Book "${book.getBookTitle()}" reserved by ${this.getFirstName()}.`);
-      return newBooking;
+    const newBooking = new Booking(`BOOKING-${Date.now()}`, book, this, bookingDate);
+    this.bookedBooks.push(newBooking);
+    book.borrowCopy();
+
+    console.log(`Book "${book.getBookTitle()}" reserved by ${this.getFirstName()}.`);
+    return newBooking;
     }
 
     public updateInfo(newAddress?: string, newPhone?: string): void {
