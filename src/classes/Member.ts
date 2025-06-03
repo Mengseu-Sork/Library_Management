@@ -73,12 +73,12 @@ export class Member extends Register {
         throw new Error(`Book "${title}" is not available for reservation.`);
     }
 
-    const newBooking = new Booking(`BOOKING-${Date.now()}`, book, this, bookingDate);
-    this.bookedBooks.push(newBooking);
-    book.borrowCopy();
 
-    console.log(`Book "${book.getBookTitle()}" reserved by ${this.getFirstName()}.`);
-    return newBooking;
+      let newBooking = new Booking(`BOOKING-${Date.now()}`, bookingDate, book, this);
+      this.bookedBooks.push(newBooking);
+      book.borrowCopy();
+      console.log(`Book "${book.getBookTitle()}" reserved by ${this.getFirstName()}.`);
+      return newBooking;
     }
 
     public updateInfo(newAddress?: string, newPhone?: string): void {
@@ -124,3 +124,8 @@ export class Member extends Register {
         return this.reviews;
     }
 }
+
+
+
+
+
