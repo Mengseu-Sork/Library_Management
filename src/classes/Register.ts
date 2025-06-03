@@ -5,11 +5,12 @@ export class Register {
     private fName: string;
     private lName: string;
     private email: string;
-    private phone: string;
+    protected phone: string;
     private age: number;
     private password: string;
+    protected address: string; // optional property
 
-    constructor(fName: string, lName: string, email: string, phone: string, age: number, password: string) {
+    constructor(fName: string, lName: string, email: string, phone: string, age: number, password: string, address: string) {
         this.id = Register.nextId++; // auto-increment ID
         this.fName = fName;
         this.lName = lName;
@@ -17,6 +18,7 @@ export class Register {
         this.phone = phone;
         this.age = age;
         this.password = password;
+        this.address = address; // optional property
     }
 
     public getId(): number|string {
@@ -38,6 +40,9 @@ export class Register {
     }
     getAge():number{
         return this.age
+    }
+    getAddress(): string {
+        return this.address;
     }
     public static checkEmail(register: Register, existingUsers: Register[]): boolean {
         const newEmail = register.getEmail();

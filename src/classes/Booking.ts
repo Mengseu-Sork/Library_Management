@@ -9,8 +9,9 @@ export class Booking {
   constructor(
     public bookingID: string,
     public bookingDate: Date,
-    public category: string
-  ) { }
+    public book: Book,
+    public member: Member
+  ) {}
 
   public checkBook(book: Book): boolean {   // This method checks if a book is available for reservation.
     return book.isAvailable();
