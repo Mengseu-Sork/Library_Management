@@ -14,6 +14,14 @@ const existingUsers: Register[] = [
   new Register("Bob","Jones","bob@example.com","0456",30,"pass456","kampot"),
 ];
 
+const books: Book[] = [
+  new Book("B001", "The Great Gatsby", "Fiction", "F. Scott Fitzgerald", 1925, "9780743273565", 4, BookFormat.DIGITAL),
+  new Book("B002", "1984", "Dystopian", "George Orwell", 1949, "9780451524935", 5, BookFormat.PHYSICAL),
+  new Book("B003", "Clean Code", "Programming", "Robert C. Martin", 2008, "9780132350884", 2, BookFormat.PHYSICAL),
+  new Book("B004", "Sapiens", "History", "Yuval Noah Harari", 2011, "9780062316097", 3, BookFormat.DIGITAL),
+  new Book("B005", "To Kill a Mockingbird", "Fiction", "Harper Lee", 1960, "9780061120084", 6, BookFormat.DIGITAL)
+];
+
 //  Register New user
 const newUser = new Register("Samon","Suon","joh@gmail.com","0965",19,"123456","kampot");
 
@@ -23,13 +31,6 @@ if (Register.checkEmail(newUser, existingUsers)) {
   console.log(" Email already used");
 }
 
-const books: Book[] = [
-  new Book("B001", "The Great Gatsby", "Fiction", "F. Scott Fitzgerald", 1925, "9780743273565", 4, BookFormat.DIGITAL),
-  new Book("B002", "1984", "Dystopian", "George Orwell", 1949, "9780451524935", 5, BookFormat.PHYSICAL),
-  new Book("B003", "Clean Code", "Programming", "Robert C. Martin", 2008, "9780132350884", 2, BookFormat.PHYSICAL),
-  new Book("B004", "Sapiens", "History", "Yuval Noah Harari", 2011, "9780062316097", 3, BookFormat.DIGITAL),
-  new Book("B005", "To Kill a Mockingbird", "Fiction", "Harper Lee", 1960, "9780061120084", 6, BookFormat.DIGITAL)
-];
 
 // Login user
 
