@@ -42,6 +42,6 @@
     returnBook(): void { // user return book date
       this.returnDate = new Date();
       this.status = BorrowStatus.RETURNED;
-      this.calculateFine(); // Automatically checks late return and fine
+      this.calculateFine();
     }
   }

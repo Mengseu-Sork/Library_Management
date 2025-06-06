@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2016",           // Supports .includes()
+    "lib": ["ES2016", "DOM"],     // Include standard JavaScript and DOM libs
     "module": "commonjs",
-    "strict": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
     "outDir": "dist",
     "rootDir": "src"
   },
