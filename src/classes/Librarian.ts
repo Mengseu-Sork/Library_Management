@@ -91,12 +91,6 @@ export class Librarian {
     }
 
     /**
-    * Displays all members in the system (implementation pending).
-    */
-    public viewAllMembers(): void { }
-
-
-    /**
      * Returns the list of registered members.
      * @returns An array of members.
      */
@@ -119,4 +113,38 @@ export class Librarian {
     public getBorrowedBooks(): Map<string, number> {
         return this.borrowedBooks;
     }
+
+    public getBooks(): Book[] {
+        return this.books;
+    }
+
+        /**
+     * Displays all books managed by the librarian.
+     */
+    public showAllBooks(): void {
+        if (this.books.length === 0) {
+            console.log("No books available.");
+            return;
+        }
+        console.log("=== Book List ===");
+        this.books.forEach((book, index) => {
+            console.log(`${index + 1}. ${book.getBookTitle()} by ${book.getAuthor()} (${book.getCreateYear()}) - ${book.getFormat()} [ID: ${book.getBookId()}]`);
+        });
+    }
+
+    /**
+     * Displays all members managed by the librarian.
+     */
+    public viewAllMembers(): void {
+        if (this.members.length === 0) {
+            console.log("No members registered.");
+            return;
+        }
+        console.log("=== Member List ===");
+        this.members.forEach((member, index) => {
+            console.log(`${index + 1}. ${member.getFirstName()} ${member.getLastName()} - Email: ${member.getEmail()}`);
+        });
+    }
+
+    
 }

@@ -1,6 +1,5 @@
   import { Book } from "./Book";
   import { BorrowStatus } from "../Enums/BorrowStatus";
-  import { Member } from "./Member";
   import { User } from "./user";
 
   export class Borrow {
@@ -43,6 +42,6 @@
     returnBook(): void {
       this.returnDate = new Date();
       this.status = BorrowStatus.RETURNED;
-      this.calculateFine(); // Automatically checks late return and fine
+      this.calculateFine();
     }
   }
