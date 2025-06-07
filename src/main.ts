@@ -7,6 +7,7 @@ import { Member } from "./classes/Member";
 import { BorrowStatus } from "./Enums/BorrowStatus";
 import { User } from "./classes/user";
 
+
 const existingUsers: Register[] = [
   new Register("John", "Doe", "john@gmail.com", "0123", 25, "pass", "kampot"),
   new Register("Jane", "Smith", "jane@gmail.com", "0456", 28, "word", "kampot"),
