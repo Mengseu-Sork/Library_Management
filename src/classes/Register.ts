@@ -47,6 +47,7 @@ export class Register {
     getPassword(): string {
         return this.password;
     }
+    // check new regisster if user use email that use already they can not do it
     public static checkEmail(register: Register, existingUsers: Register[]): boolean {
         const newEmail = register.getEmail();
         for (let user of existingUsers) {
